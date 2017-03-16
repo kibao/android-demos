@@ -14,7 +14,6 @@ public class TasksDatabaseHelper extends SQLiteOpenHelper {
 
     public interface TasksColumns extends BaseColumns {
         String TASK_NAME = "task_name";
-        String TASK_EXPIRATION = "task_expiration";
     }
 
     private static final int DATABASE_VERSION = 1;
@@ -43,9 +42,8 @@ public class TasksDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + Tables.TASKS + " ("
-            + TasksColumns._ID + "  TEXT PRIMARY KEY,"
-            + TasksColumns.TASK_NAME + " TEXT, "
-            + TasksColumns.TASK_EXPIRATION + " INTEGER "
+            + TasksColumns._ID + "  TEXT PRIMARY KEY, "
+            + TasksColumns.TASK_NAME + " TEXT "
             + ");");
 
     }

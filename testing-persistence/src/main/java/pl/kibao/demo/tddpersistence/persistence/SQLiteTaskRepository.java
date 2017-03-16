@@ -13,16 +13,16 @@ import java.util.UUID;
 
 import pl.kibao.demo.tddpersistence.domain.Task;
 import pl.kibao.demo.tddpersistence.domain.TaskRepository;
+import pl.kibao.demo.tddpersistence.persistence.TasksDatabaseHelper.Tables;
 import pl.kibao.demo.tddpersistence.persistence.TasksDatabaseHelper.TasksColumns;
 
 public class SQLiteTaskRepository implements TaskRepository {
-    private static final String TABLE_NAME = "tasks";
+    private static final String TABLE_NAME = Tables.TASKS;
     private SQLiteOpenHelper dbHelper;
     private SQLiteTaskMapper mapper;
     private static final String[] PROJECTION = new String[]{
         TasksColumns._ID,
-        TasksColumns.TASK_NAME,
-        TasksColumns.TASK_EXPIRATION
+        TasksColumns.TASK_NAME
     };
 
     public SQLiteTaskRepository(@NonNull SQLiteOpenHelper dbHelper, @NonNull SQLiteTaskMapper mapper) {
