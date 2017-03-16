@@ -1,1 +1,1 @@
-include ':testing-persistence'
+include ':testing-persistence', ':sqlite-database-from-assets'
